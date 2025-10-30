@@ -1,0 +1,23 @@
+<div class="contenedor">
+  <header>
+    <h1>{{ titulo }}</h1>
+  </header>
+
+  <section class="galeria">
+    <div class="mascotas">
+      <div class="card" *ngFor="let m of mascotas">
+        <img [src]="m.imagen" alt="{{m.nombre}}">
+        <h2>{{ m.nombre }}</h2>
+        <p>{{ m.descripcion }}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="formulario">
+    <h2>Agregar nueva mascota 🐶🐱</h2>
+    <input type="text" placeholder="Nombre" [(ngModel)]="nombre">
+    <textarea placeholder="Descripción" [(ngModel)]="descripcion"></textarea>
+    <input type="text" placeholder="URL de la imagen" [(ngModel)]="imagen">
+    <button (click)="agregarMascota()">Agregar</button>
+  </section>
+</div>
